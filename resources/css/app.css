@@ -1,0 +1,218 @@
+@import 'tailwindcss';
+
+@import 'tw-animate-css';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+    --font-sans:
+        Instrument Sans, ui-sans-serif, system-ui, sans-serif,
+        'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+        'Noto Color Emoji';
+
+    --radius-lg: var(--radius);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-sm: calc(var(--radius) - 4px);
+
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-destructive: var(--destructive);
+    --color-destructive-foreground: var(--destructive-foreground);
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+    --color-chart-1: var(--chart-1);
+    --color-chart-2: var(--chart-2);
+    --color-chart-3: var(--chart-3);
+    --color-chart-4: var(--chart-4);
+    --color-chart-5: var(--chart-5);
+    --color-sidebar: var(--sidebar-background);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+    *,
+    ::after,
+    ::before,
+    ::backdrop,
+    ::file-selector-button {
+        border-color: var(--color-gray-200, currentColor);
+    }
+
+    * {
+        @apply border-border outline-ring/50;
+    }
+
+    html,
+    body {
+        @apply bg-background text-foreground;
+        --font-sans:
+            'Instrument Sans', ui-sans-serif, system-ui, sans-serif,
+            'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+            'Noto Color Emoji';
+    }
+}
+
+:root {
+    --background: hsl(222 84% 5%);
+    --foreground: hsl(0 0% 98%);
+    --card: hsl(222 47% 8%);
+    --card-foreground: hsl(0 0% 98%);
+    --popover: hsl(224 71% 4%);
+    --popover-foreground: hsl(0 0% 98%);
+    --primary: hsl(328 85% 64%);
+    --primary-foreground: hsl(222 47% 11%);
+    --secondary: hsl(223 35% 14%);
+    --secondary-foreground: hsl(0 0% 98%);
+    --muted: hsl(223 35% 14%);
+    --muted-foreground: hsl(214 20% 72%);
+    --accent: hsl(223 35% 14%);
+    --accent-foreground: hsl(0 0% 98%);
+    --destructive: hsl(0 72% 51%);
+    --destructive-foreground: hsl(0 0% 100%);
+    --border: hsl(223 35% 18%);
+    --input: hsl(223 35% 18%);
+    --ring: hsl(328 85% 64%);
+    --chart-1: hsl(328 85% 64%);
+    --chart-2: hsl(348 83% 60%);
+    --chart-3: hsl(37 92% 50%);
+    --chart-4: hsl(173 58% 39%);
+    --chart-5: hsl(217 91% 60%);
+    --radius: 0.8rem;
+    --sidebar-background: hsl(224 71% 4%);
+    --sidebar-foreground: hsl(0 0% 98%);
+    --sidebar-primary: hsl(328 85% 64%);
+    --sidebar-primary-foreground: hsl(222 47% 11%);
+    --sidebar-accent: hsl(223 35% 14%);
+    --sidebar-accent-foreground: hsl(0 0% 98%);
+    --sidebar-border: hsl(223 35% 14%);
+    --sidebar-ring: hsl(328 85% 64%);
+    --sidebar: hsl(224 71% 4%);
+}
+
+
+/* =========================================================
+   AJUSTES OSCUROS - APPWEB SUBLIMACIÓN
+   ========================================================= */
+@layer base {
+    input,
+    textarea,
+    select {
+        background-color: hsl(222 47% 11%) !important;
+        color: hsl(0 0% 98%) !important;
+        border-color: hsl(223 35% 20%) !important;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+        color: hsl(214 20% 65%) !important;
+        opacity: 1 !important;
+    }
+
+    select option {
+        background-color: hsl(222 47% 11%) !important;
+        color: hsl(0 0% 98%) !important;
+    }
+
+    label {
+        color: hsl(0 0% 98%);
+        font-weight: 600;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+        border-color: hsl(328 85% 64%) !important;
+        box-shadow: 0 0 0 4px hsl(328 85% 64% / 0.15) !important;
+        outline: none !important;
+    }
+}
+
+/* =========================================================
+   SISTEMA DE DISEÑO GLOBAL — GLASS SYSTEM
+   ========================================================= */
+:root {
+  --bg: #05010a;
+  --glass: rgba(15, 10, 35, 0.45);
+  --glass-heavy: rgba(15, 10, 35, 0.75);
+  --stroke: rgba(255, 255, 255, 0.08);
+  --primary-hex: #a855f7;
+  --secondary-hex: #3b82f6;
+  --accent-hex: #ec4899;
+}
+
+@keyframes floatSoft {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes pageEnter {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.glass {
+  backdrop-filter: blur(40px) saturate(180%);
+  background: var(--glass);
+  border: 1px solid var(--stroke);
+  box-shadow: 0 50px 150px rgba(0, 0, 0, 0.7);
+  border-radius: 24px;
+}
+
+.card {
+  backdrop-filter: blur(40px) saturate(180%);
+  background: var(--glass);
+  border: 1px solid var(--stroke);
+  box-shadow: 0 50px 150px rgba(0, 0, 0, 0.7);
+  border-radius: 24px;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 60px 180px rgba(168, 85, 247, 0.2);
+}
+
+.nav-item {
+  transition: all 0.3s ease;
+}
+
+.nav-item.active {
+  background: rgba(168, 85, 247, 0.15);
+  box-shadow: inset 0 0 20px rgba(168, 85, 247, 0.2);
+}
+
+.nav-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+.page-enter-active {
+  animation: pageEnter 0.4s ease-out;
+}
